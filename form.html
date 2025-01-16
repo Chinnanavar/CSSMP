@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      p {
+        color: red;
+      }
+    </style>
+    <form>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+      />
+      <br />
+      <p id="emaili"></p>
+      <br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+      <br />
+      <p id="passwordi"></p>
+      <br />
+      <label for="checkbox">Show password</label>
+      <input type="checkbox" id="checkbox" name="checkbox" /> <br />
+      <br />
+      <button type="submit" onclick="return validateForm()">Submit</button>
+    </form>
+    <script>
+      function validateForm() {
+        var user = document.getElementById("email").value;
+        var pass = document.getElementById("password").value;
+
+        if (user == "") {
+          document.getElementById("emaili").innerHTML = "** Email is required";
+          return false;
+        }
+        if (pass == "") {
+          document.getElementById("passwordi").innerHTML =
+            "** Password is required";
+          return false;
+        }
+        if (pass.replace(/s/g, "").length <= 0) {
+          document.getElementById("passwordi").innerHTML =
+            "** White Space Are Not Allowed";
+          return false;
+        }
+        if (
+          user.charAt(user.length - 4) != "." &&
+          user.charAt(user.length - 3) != "."
+        ) {
+          document.getElementById("emaili").innerHTML = "** @ is required";
+          return false;
+        }
+        if (user.length < 5 || user.length > 15) {
+          document.getElementById("emaili").innerHTML =
+            "** Email should have Atleast 5 Character";
+          return false;
+        }
+        if (pass.length < 8 || pass.length > 15) {
+          document.getElementById("passwordi").innerHTML =
+            "** Password should have Atleast 8 Character";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

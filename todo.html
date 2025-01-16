@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li id="task1">Task 1</li>
+      <button onclick="done1()" id="done1">Done</button>
+      <li id="task2">Task 2</li>
+      <button onclick="done2()" id="done2">Done</button>
+      <li id="task3">Task 3</li>
+      <button onclick="done3()" id="done3">Done</button>
+    </ul>
+    <script>
+      function done1() {
+        const button = document.getElementById("done1");
+        if (button.innerHTML === "Done") {
+          document.getElementById("task1").style.textDecoration =
+            "line-through";
+          button.innerHTML = "Undo";
+        } else {
+          document.getElementById("task1").style.textDecoration = "none";
+          button.innerHTML = "Done";
+        }
+      }
+
+      function done2() {
+        const button = document.getElementById("done2");
+        if (button.innerHTML === "Done") {
+          document.getElementById("task2").style.textDecoration =
+            "line-through";
+          button.innerHTML = "Undo";
+        } else {
+          document.getElementById("task2").style.textDecoration = "none";
+          button.innerHTML = "Done";
+        }
+      }
+
+      function done3() {
+        const button = document.getElementById("done3");
+        if (button.innerHTML === "Done") {
+          document.getElementById("task3").style.textDecoration =
+            "line-through";
+          button.innerHTML = "Undo";
+        } else {
+          document.getElementById("task3").style.textDecoration = "none";
+          button.innerHTML = "Done";
+        }
+      }
+    </script>
+  </body>
+</html>
